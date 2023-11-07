@@ -1,0 +1,3 @@
+/home/beso/CLionProjects/Theory/cmake-build-debug/CMakeFiles/Theory.dir
+/home/beso/CLionProjects/Theory/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/beso/CLionProjects/Theory/cmake-build-debug/CMakeFiles/rebuild_cache.dir
