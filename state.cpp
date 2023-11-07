@@ -13,7 +13,7 @@ void state::make_reject() {
     final = false;
 }
 
-bool state::is_final() {
+bool state::is_final() const {
     return final;
 }
 

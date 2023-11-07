@@ -7,7 +7,7 @@
 class state;
 
 NFA::NFA(bool is_final) {
-    state *new_state = new state();
+    auto *new_state = new state();
     if (is_final) {
         new_state->make_final();
         final_states.push_back(new_state);
@@ -18,8 +18,8 @@ NFA::NFA(bool is_final) {
 }
 
 void NFA::deep_delete() {
-    for (int k = 0; k < states.size(); k++)
-        delete (states[k]);
+    for (auto &state: states)
+        delete state;
 }
 
 void NFA::add_state(state *new_state) {
@@ -164,13 +164,13 @@ void NFA::union_NFA(NFA *nfa) {
 void NFA::print_NFA() {
     int num_transitions = 0;
     for (auto state: states)
-        num_transitions += state->get_transitions()->size();
+        num_transitions += (int) state->get_transitions()->size();
     cout << states.size() << ' ' << final_states.size() << ' ' << num_transitions << endl;
     for (auto state: final_states)
         cout << state->index << ' ';
     cout << endl;
-    for (int k = 0; k < states.size(); k++) {
-        auto transitions = states[k]->get_transitions();
+    for (auto &state: states) {
+        auto transitions = state->get_transitions();
         cout << transitions->size() << ' ';
         for (auto transition: *transitions)
             cout << transition.first << ' ' << transition.second->index << ' ';

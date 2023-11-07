@@ -11,7 +11,7 @@ using namespace std;
 
 class NFA {
 public:
-    NFA(bool is_final);
+    explicit NFA(bool is_final);
 
     void add_state(state *new_state);
 

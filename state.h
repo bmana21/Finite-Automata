@@ -19,7 +19,7 @@ public:
 
     void make_reject();
 
-    bool is_final();
+    [[nodiscard]] bool is_final() const;
 
     void add_transition(char letter, state *next_state);
 
